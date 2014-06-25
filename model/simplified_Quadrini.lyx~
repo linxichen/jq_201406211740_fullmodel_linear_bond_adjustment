@@ -745,7 +745,7 @@ m_{c}=\frac{1}{c}\left[1-\frac{2\kappa_{b}}{R}\left(\frac{b}{R}-\frac{\bar{b}}{\
 
 \begin_layout Standard
 This way we can solve the two problems above.
- The disadvantage is that when the constraint is binding, finding the control
+ The disadvantage is that when the constraint is binding, find the control
  variables given the augmented state involves nonlinear equation solving.
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
