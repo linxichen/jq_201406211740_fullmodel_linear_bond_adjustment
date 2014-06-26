@@ -691,12 +691,18 @@ A Solution to Problems
 \begin_layout Standard
 A solution, suggested by Craig and Cosmin during my prospectus presentation
  is to add a tiny bit of adjustment cost to bond.
- I tried many things but only this works.
+ I tried many things and this one works the best.
  We modify the household's budget constraint to be:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Household's Budget Constraint:
 \begin_inset Formula 
-\[
-\frac{ac}{1-n}n+b+d=c+\frac{b'}{R}+\kappa_{b}(\frac{b}{R}-\frac{\bar{b}}{\bar{R}})^{2}
-\]
+\begin{equation}
+\frac{ac}{1-n}n+b+d=c+\frac{b'}{R}+\kappa_{b}(\frac{b}{R}-\frac{\bar{b}}{\bar{R}})
+\end{equation}
 
 \end_inset
 
@@ -716,9 +722,9 @@ This changes the resource constraint and defintion of
 \series bold
 Resource Constraint:
 \begin_inset Formula 
-\[
-(1-\delta)k+zk^{\theta}n^{1-\theta}=c+k'+\kappa(d-\bar{d})^{2}+\kappa_{b}(\frac{b}{R}-\frac{\bar{b}}{\bar{R}})^{2}
-\]
+\begin{equation}
+(1-\delta)k+zk^{\theta}n^{1-\theta}=c+k'+\kappa(d-\bar{d})^{2}+\kappa_{b}(\frac{b}{R}-\frac{\bar{b}}{\bar{R}})
+\end{equation}
 
 \end_inset
 
@@ -734,9 +740,9 @@ Definition of
 
 :
 \begin_inset Formula 
-\[
-m_{c}=\frac{1}{c}\left[1-\frac{2\kappa_{b}}{R}\left(\frac{b}{R}-\frac{\bar{b}}{\bar{R}}\right)\right]
-\]
+\begin{equation}
+m_{c}=\frac{1}{c}\left[1-\kappa_{b}\frac{1}{R}\right]
+\end{equation}
 
 \end_inset
 
@@ -753,6 +759,208 @@ This way we can solve the two problems above.
  model.
  The disadvantage is that when the constraint is binding, finding the control
  variables given the augmented state involves nonlinear equation solving.
+ To show the algebra involved, we reproduce the unchanged equilibrium conditions
+ below:
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Definition of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+\lambda=\frac{1}{1+2\kappa(d-\bar{d})}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Capital Demand:
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{c}(\lambda-\mu\xi)=\mathbb{E}\beta\frac{1}{c'}m_{k}'
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Definition of 
+\begin_inset Formula $m_{k}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+m_{k}=\frac{1}{c}\left[\lambda(1-\delta)+(\lambda-\mu)\theta zk^{\theta-1}n^{1-\theta}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Bond Supply:
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{c}\left(\frac{\lambda}{R}-\mu\xi\frac{1-\tau}{R-\tau}\right)=\mathbb{E}\beta m_{b}'
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Definition of 
+\begin_inset Formula $m_{b}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+m_{b}=\frac{1}{c}\lambda
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Bond Demand:
+\begin_inset Formula 
+\begin{equation}
+\frac{1}{c}\frac{1-\tau}{R-\tau}=\mathbb{E}\beta m_{c}'
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Labor Market Clearing:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\alpha c}{1-n}=(1-\theta)zk^{\theta}n^{-\theta}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+
+\series bold
+Complementary Slackness:
+\series default
+
+\begin_inset Formula 
+\begin{equation}
+\mu\geq0
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\mu\left[\xi k'-\xi\frac{b'(1-\tau)}{R-\tau}-zk^{\theta}n^{1-\theta}\right]=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the next section we will show the mapping from augmented state to control
+ variables in a case-by-case fashion.
+\end_layout
+
+\begin_layout Subsubsection
+Case 1: Binding
+\end_layout
+
+\begin_layout Standard
+The target here is to reduce the eight equations of eight variables into
+ one nonlinear equation in one variable.
+ Firstly from the definition of 
+\begin_inset Formula $m_{b}$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+\lambda=m_{b}c
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+d=\bar{d}+\frac{1}{2\kappa}(\frac{1}{m_{b}c}-1),
+\]
+
+\end_inset
+
+and then we can combine the defintion of 
+\begin_inset Formula $m_{k}$
+\end_inset
+
+ and labor martket clearing condition to obtain hour as a function of consumptio
+n:
+\begin_inset Formula 
+\[
+n=\frac{(\frac{m_{k}}{m_{b}}-1+\delta)\frac{1-\theta}{\theta}k}{\alpha c+(\frac{m_{k}}{m_{b}}-1+\delta)\frac{1-\theta}{\theta}k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "myrefs"
